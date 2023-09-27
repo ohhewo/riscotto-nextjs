@@ -22,7 +22,8 @@ jobs:
 
       - name: Build and push Docker image to Google Container Registry (GCR)
         run: |
-          gcloud auth configure-docker \europe-west2-docker.pkg.dev
+          gcloud auth configure-docker 
+            \europe-west2-docker.pkg.dev
           docker build --no-cache -t gcr.io/${{ secrets.PROJECT_ID }}/${{ secrets.GCP_IMAGE_NAME }}:latest .
           docker push gcr.io/${{ secrets.PROJECT_ID }}/${{ secrets.GCP_IMAGE_NAME }}:latest
 
