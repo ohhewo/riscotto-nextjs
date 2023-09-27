@@ -20,12 +20,12 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_PRIVATE_KEY }}
           export_default_credentials: true
 
-      - name: Build and push Docker image to Google Container Registry (GCR)
+      - name: Build and push Docker image to Google Artifact Registry
         run: |
           gcloud auth configure-docker europe-west2-docker.pkg.dev
-          docker build --no-cache -t europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs:latest .
-          docker push europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs:latest
+          docker build --no-cache -t europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs/riscotto-nextjs:latest .
+          docker push europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs/riscotto-nextjs:latest
 
       - name: Deploy to Google Cloud Run
         run: |
-          gcloud run deploy riscotto-nextjs --image europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs:latest --platform managed --region europe-west2 --allow-unauthenticated
+          gcloud run deploy riscotto-nextjs --image europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs/riscotto-nextjs:latest --platform managed --region europe-west2 --allow-unauthenticated
