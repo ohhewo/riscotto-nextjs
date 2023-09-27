@@ -23,8 +23,8 @@ jobs:
       - name: Build and push Docker image to Google Container Registry (GCR)
         run: |
           gcloud auth configure-docker europe-west2-docker.pkg.dev
-          docker build --no-cache -t europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs
-          docker push europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs/riscotto-nextjs
+          docker build --no-cache -t europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs:latest
+          docker push europe-west2-docker.pkg.dev/rosy-strata-400307/riscotto-nextjs/riscotto-nextjs:latest
 
       - name: Deploy to Google Cloud Run
         run: |
