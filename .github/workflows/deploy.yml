@@ -28,4 +28,4 @@ jobs:
 
       - name: Deploy to Google Cloud Run
         run: |
-          gcloud run deploy ${{ secrets.GCP_SERVICE_NAME }} --image gcr.io/${{ secrets.PROJECT_ID }}/${{ secrets.GCP_IMAGE_NAME }}:latest --platform managed --region ${{ secrets.GCP_REGION }} --allow-unauthenticated
+          gcloud run deploy ${{ secrets.GCP_SERVICE_NAME }} --image europe-west2-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.GCP_IMAGE_NAME }}:latest --platform managed --region ${{ secrets.GCP_REGION }} --allow-unauthenticated
