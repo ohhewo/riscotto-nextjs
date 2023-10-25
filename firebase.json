@@ -1,4 +1,4 @@
-"hosting": {
+{ "hosting": {
 
   // Add the "rewrites" attribute within "hosting"
   "rewrites": [ {
@@ -9,4 +9,5 @@
       "pinTag": true              // optional (see note below)
     }
   } ]
+}
 }
