@@ -2,7 +2,7 @@
 
   // Add the "rewrites" attribute within "hosting"
   "rewrites": [ {
-    "source": "/riscotto-nextjs",
+    "source": "./src/app/page.tsx",
     "run": {
       "serviceId": "riscotto-nextjs",  // "service name" (from when you deployed the container image)
       "region": "europe-west2",    // optional (if omitted, default is us-central1)
